@@ -15,7 +15,7 @@ const last = function(array, n = 1) {
 
 // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 const indexOf = function(array, target, fromIndex=0) {
-  // Your code goes here
+  return fromIndex === 0 ? array.indexOf(target) : array.indexOf(target, fromIndex);
 };
 
 const isArrayLike = function(obj) {
