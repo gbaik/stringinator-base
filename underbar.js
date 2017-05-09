@@ -60,18 +60,21 @@ const pluck = function(obj, key) {
 // value. The callback is invoked with four arguments:
 // (accumulator, value, index|key, collection).
 const reduce = function(obj, callback=identity, initialValue) {
-  let results = 0;
-  each(obj, (currentValue, currentIndexOrKey, obj) => {
-    results += currentValue
+  let accumulator = initialValue;
+  let initializing = accumulator === undefined;
+  each(obj, (currentValue, currentIndexOrKey, iteratedObj)  => {
+    if (initializing) {
+      initializing = false;
+      accumulator = currentValue;
+    } else {
+      accumulator = callback(accumulator, currentValue, currentIndexOrKey, iteratedObj);
+    }
   });
-  return results;
-
-  //callback(currentValue + initialValue);
+  return accumulator;
 };
 
 // Return true if the object contains the target.
 const contains = function(obj, target) {
-  // Your code goes here
 };
 
 // Return true if all the elements / object values are accepted by the callback.
