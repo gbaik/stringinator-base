@@ -75,6 +75,9 @@ const reduce = function(obj, callback=identity, initialValue) {
 
 // Return true if the object contains the target.
 const contains = function(obj, target) {
+    return reduce(obj, (wasFound, item) => {
+    return wasFound || item === target;
+  }, false);
 };
 
 // Return true if all the elements / object values are accepted by the callback.
