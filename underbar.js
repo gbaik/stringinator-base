@@ -19,7 +19,8 @@ const indexOf = function(array, target, fromIndex=0) {
 };
 
 const isArrayLike = function(obj) {
-  // Your code goes here
+  const length = obj['length'];
+  return typeof length === 'number' && length >= 0;
 };
 
 // The cornerstone of a functional library -- iterate all elements, pass each to a callback function.
