@@ -50,7 +50,7 @@ const map = function(obj, callback=identity) {
 // Return an array of the values o a certain property in the collection.
 // E.g. given an array of people objects, return an array of just their ages.
 const pluck = function(obj, key) {
-  return map(obj, results => results[key]);
+  return map(obj, item => item[key]);
 };
 
 // Reduces collection to a value which is the accumulated result of running
@@ -80,7 +80,13 @@ const some = function(obj, callback=identity) {
 
 // Return an array with all elements / object values that are accepted by the callback.
 const filter = function(obj, callback=identity) {
-  // Your code goes here
+  const results = [];
+  each(obj, (currentValue, currentIndexOrKey, obj) => {
+    if (callback(currentValue, currentIndexOrKey, obj) === true){
+      results.push(obj[currentIndexOrKey]);
+    };
+  });
+  return results;
 };
 
 // Return object without the elements / object valuesthat were rejected by the callback.
