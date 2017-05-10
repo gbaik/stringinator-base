@@ -10,7 +10,6 @@ const last = function(str, n) {
 
 const removeChar = function(str, target) {
   // hint: use _.reject
-  // Your code goes here
 };
 
 const hasChar = function(str, target) {
@@ -41,7 +40,7 @@ const countChars = function(str) {
 };
 
 const dedup = function(str) {
-  // Your code goes here
+  return _.uniq(str).join("");
 };
 
 module.exports = {
