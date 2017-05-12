@@ -24,13 +24,7 @@ const hasChar = function(str, target) {
 };
 
 const isOnlyDigits = function(str) {
-  const split = str.split("");
-  let array = [];
-  return console.log(_.every(str, el => {
-    for (let i = 0; i < split.length; i++) {
-      return !isNaN(split[i])
-    };
-  }));
+  return _.every(str, item => !isNaN(item))
 };
 
 const filterToOnlyDigits = function(str) {
