@@ -10,7 +10,7 @@ const last = function(str, n) {
 
 const removeChar = function(str, target) {
   // hint: use _.reject
-  // return _.reject(str, target => _.pluck(str, target));
+  return _.reject(str, item => item === target).join("");
 };
 
 const hasChar = function(str, target) {
