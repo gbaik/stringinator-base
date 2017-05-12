@@ -10,19 +10,30 @@ const last = function(str, n) {
 
 const removeChar = function(str, target) {
   // hint: use _.reject
+  // return _.reject(str, target => _.pluck(str, target));
 };
 
 const hasChar = function(str, target) {
   // hint: use _.some
-  // Your code goes here
+  const split = str.split("");
+  return _.some(str, el => {
+    for (let i = 0; i < split.length; i++){
+      return split[i] === target;
+    };
+  });
 };
 
 const isOnlyDigits = function(str) {
-  // Your code goes here
+  const split = str.split("");
+  let array = [];
+  return console.log(_.every(str, el => {
+    for (let i = 0; i < split.length; i++) {
+      return !isNaN(split[i])
+    };
+  }));
 };
 
 const filterToOnlyDigits = function(str) {
-  // Your code goes here
 };
 
 const truncateString = function(val, maxLength) {
@@ -32,7 +43,6 @@ const truncateString = function(val, maxLength) {
 
 const truncateLongItems = function(obj, maxLength) {
   // hint: use truncateString above
-  // Your code goes here
 };
 
 const countChars = function(str) {
