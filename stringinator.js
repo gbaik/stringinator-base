@@ -14,13 +14,7 @@ const removeChar = function(str, target) {
 };
 
 const hasChar = function(str, target) {
-  // hint: use _.some
-  const split = str.split("");
-  return _.some(str, el => {
-    for (let i = 0; i < split.length; i++){
-      return split[i] === target;
-    };
-  });
+  return _.some(str, item => item === target);
 };
 
 const isOnlyDigits = function(str) {
