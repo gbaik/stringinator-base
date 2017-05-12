@@ -9,7 +9,6 @@ const last = function(str, n) {
 };
 
 const removeChar = function(str, target) {
-  // hint: use _.reject
   return _.reject(str, item => item === target).join("");
 };
 
@@ -18,10 +17,11 @@ const hasChar = function(str, target) {
 };
 
 const isOnlyDigits = function(str) {
-  return _.every(str, item => !isNaN(item))
+  return _.every(str, item => !isNaN(item));
 };
 
 const filterToOnlyDigits = function(str) {
+  return _.filter(str, item => !isNaN(parseFloat(item))).join("");
 };
 
 const truncateString = function(val, maxLength) {
@@ -31,6 +31,7 @@ const truncateString = function(val, maxLength) {
 
 const truncateLongItems = function(obj, maxLength) {
   // hint: use truncateString above
+
 };
 
 const countChars = function(str) {
